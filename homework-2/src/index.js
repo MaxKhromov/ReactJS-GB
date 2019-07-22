@@ -1,0 +1,1 @@
+console.log('Four Webpack Project');
