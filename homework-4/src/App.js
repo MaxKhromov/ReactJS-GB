@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Developer } from './classes/Developer';
 
-let developer = new Developer('Sasha', 'Senior', 'Java Developer');
+import Blog from './app/components/Blog';
+import Post from './app/components/Post';
+import WelcomeModal from './app/components/WelcomeModal';
+
 
 class App extends React.Component {
     render() {
