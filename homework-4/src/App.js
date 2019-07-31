@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Blog from "./app/components/Blog";
-import Post from "./app/components/Post";
 import WelcomeModal from "./app/components/WelcomeModal";
 
 const posts = [
@@ -25,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Blog />
+        <Blog posts={posts} />
       </div>
     );
   }
