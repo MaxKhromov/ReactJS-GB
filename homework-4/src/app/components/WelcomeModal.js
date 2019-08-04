@@ -8,20 +8,31 @@ class WelcomeModal extends React.Component {
       display: true
     };
   }
+
+  closeWelcomeWindow() {
+    this.setState({ display: false });
+  }
+
   render() {
-    return (
-      <div>
-        <div className="modal_bg">
-          <div className="welcome_modal">
-            <div className="welcome_modal__close_btn">X</div>
-            <div>
-              <h3>Welcome!</h3>
-              <p>Welcome to our page, enjoy your time.</p>
+    if (this.state.display) {
+      return (
+        <div>
+          <div className="modal_bg">
+            <div className="welcome_modal">
+              <div
+                className="welcome_modal__close_btn"
+                onClick={this.closeWelcomeWindow()}
+              >
+                X
+              </div>
+              {this.props.children}
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <div />;
+    }
   }
 }
 

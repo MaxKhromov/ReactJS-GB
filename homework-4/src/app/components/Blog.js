@@ -10,9 +10,9 @@ class Blog extends React.Component {
   render() {
     return (
       <div>
-        {this.posts.map(post => {
+        {this.state.posts.map(post => {
           return (
-            <div>
+            <div key={post.title}>
               <h3>{post.title}</h3>
               <p>{post.body}</p>
             </div>
