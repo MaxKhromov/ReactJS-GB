@@ -1,4 +1,6 @@
 import React from "react";
+import Post from "./Post";
+
 
 class Blog extends React.Component {
   constructor(props) {
@@ -12,10 +14,7 @@ class Blog extends React.Component {
       <div>
         {this.state.posts.map(post => {
           return (
-            <div key={post.title}>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-            </div>
+            <Post key={post.title} postTitle={post.title} postBody={post.body}></Post>
           );
         })}
       </div>
