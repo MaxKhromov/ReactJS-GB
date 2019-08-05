@@ -20,10 +20,6 @@ Nulla laborum laborum veniam laboris enim. Duis nulla aute sit occaecat nisi eu 
   }
 ];
 
-openWelcomeModal() {
-  
-}
-
 class App extends React.Component {
   render() {
     return (
@@ -32,7 +28,6 @@ class App extends React.Component {
           <h3>Welcome!</h3>
           <p>Welcome to our page, enjoy your time.</p>
         </WelcomeModal>
-        <button onClick={openWelcomeModal}>open Welcome Window</button>
         <Blog posts={posts} />
       </div>
     );

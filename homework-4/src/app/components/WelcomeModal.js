@@ -5,35 +5,35 @@ class WelcomeModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: true
+      display: false
     };
   }
 
-  closeWelcomeWindow() {
-    this.setState({ display: false });
+  closeWelcomeWindow = function () {
+    this.setState({display: false});
+    console.log('setState: false');
+  }
+
+  componentDidMount() {
+    if (!this.state.display) {
+      console.log('state is false');
+      this.render();
+    }
   }
 
   render() {
-    if (this.state.display) {
-      return (
-        <div>
-          <div className="modal_bg">
-            <div className="welcome_modal">
-              <div
-                className="welcome_modal__close_btn"
-                onClick={this.closeWelcomeWindow()}
-              >
-                X
-              </div>
-              {this.props.children}
-            </div>
+    return (
+      <div>
+        <div className="modal_bg">
+          <div className="welcome_modal">
+            <div className="welcome_modal__close_btn" onClick={()=>{this.closeWelcomeWindow()}}>X</div>
+            {this.props.children}
           </div>
         </div>
-      );
-    } else {
-      return <div />;
-    }
+      </div>
+    );
   }
+
 }
 
 export default WelcomeModal;
