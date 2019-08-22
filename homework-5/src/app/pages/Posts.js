@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
+import UsersList from '../components/UsersList';
 
-export default class `Posts` extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-
-    
+export default class Users extends Component {
+  render() {
+    return (
+      <div>
+        {
+          (!this.props.children) ?
+            (<UsersList />)
+            :
+            (this.props.children)
+        }
+      </div>
+    );
+  }
 }
