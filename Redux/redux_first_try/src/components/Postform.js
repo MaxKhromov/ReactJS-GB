@@ -32,7 +32,8 @@ class PostForm extends Component {
             body: JSON.stringify(post)
         })
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => console.log(data))
+        .catch(()=>{console.log('NO POSTS THERE');});
     }
 
     render() {
